@@ -1,3 +1,4 @@
+
 import {
   Card,
   CardContent,
@@ -14,11 +15,12 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
 
 const players = [
-    { name: 'Alex', position: 'Midfielder', avatar: 'https://placehold.co/40x40.png', initial: 'A' },
-    { name: 'Jamie', position: 'Forward', avatar: 'https://placehold.co/40x40.png', initial: 'J' },
-    { name: 'Sam', position: 'Defender', avatar: 'https://placehold.co/40x40.png', initial: 'S' },
+    { name: 'Alex', position: 'Midfielder', status: 'Active', avatar: 'https://placehold.co/40x40.png', initial: 'A' },
+    { name: 'Jamie', position: 'Forward', status: 'Active', avatar: 'https://placehold.co/40x40.png', initial: 'J' },
+    { name: 'Sam', position: 'Defender', status: 'Injured', avatar: 'https://placehold.co/40x40.png', initial: 'S' }
 ]
 
 export default function PlayersPage() {
@@ -35,7 +37,7 @@ export default function PlayersPage() {
           <CardTitle>Player Roster</CardTitle>
           <CardDescription>
             A list of all players on your team.
-          </CardDescription>
+          </Description>
         </CardHeader>
         <CardContent>
            <Table>
@@ -43,6 +45,7 @@ export default function PlayersPage() {
               <TableRow>
                 <TableHead>Player</TableHead>
                 <TableHead>Position</TableHead>
+                <TableHead className="text-right">Status</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -56,6 +59,9 @@ export default function PlayersPage() {
                     {player.name}
                   </TableCell>
                   <TableCell>{player.position}</TableCell>
+                  <TableCell className="text-right">
+                    <Badge variant={player.status === 'Active' ? 'default' : 'destructive'}>{player.status}</Badge>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
