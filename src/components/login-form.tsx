@@ -42,7 +42,7 @@ export function LoginForm() {
     defaultValues: {
       email: '',
       password: '',
-      role: 'parent'
+      role: undefined,
     },
   });
 
