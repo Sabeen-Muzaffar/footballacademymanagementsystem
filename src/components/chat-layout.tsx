@@ -32,7 +32,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-const coaches = [
+const initialCoaches = [
     {
       name: "Coach David",
       email: "coach.david@example.com",
@@ -75,10 +75,13 @@ const coaches = [
     },
 ];
 
-type Coach = (typeof coaches)[number];
+type Coach = (typeof initialCoaches)[number];
+type Message = Coach["messages"][number];
 
 export function ChatLayout({ defaultLayout = [265, 440, 655] }: { defaultLayout: number[] | undefined }) {
+  const [coaches, setCoaches] = React.useState<Coach[]>(initialCoaches);
   const [selectedCoach, setSelectedCoach] = React.useState<Coach>(coaches[0]);
+  const [message, setMessage] = React.useState("");
   const isMobile = useIsMobile();
   const [isChatVisible, setIsChatVisible] = React.useState(false);
 
@@ -88,6 +91,36 @@ export function ChatLayout({ defaultLayout = [265, 440, 655] }: { defaultLayout:
       setIsChatVisible(true);
     }
   }
+
+  const handleSendMessage = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!message.trim() || !selectedCoach) return;
+
+    const newMessage: Message = {
+      id: selectedCoach.messages.length + 1,
+      name: "You",
+      message: message.trim(),
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+    };
+
+    const updatedCoaches = coaches.map(coach => {
+      if (coach.email === selectedCoach.email) {
+        return {
+          ...coach,
+          messages: [...coach.messages, newMessage]
+        };
+      }
+      return coach;
+    });
+
+    setCoaches(updatedCoaches);
+    const updatedSelectedCoach = updatedCoaches.find(c => c.email === selectedCoach.email);
+    if (updatedSelectedCoach) {
+      setSelectedCoach(updatedSelectedCoach);
+    }
+    setMessage("");
+  };
+
 
   const ChatList = () => (
     <Tabs defaultValue="all">
@@ -243,12 +276,23 @@ export function ChatLayout({ defaultLayout = [265, 440, 655] }: { defaultLayout:
             </div>
         </div>
         <div className="p-4">
-            <div className="relative">
-            <Textarea placeholder={`Reply to ${selectedCoach.name}...`} className="pr-16"/>
-            <Button type="submit" size="icon" className="absolute right-2 top-1/2 -translate-y-1/2">
-                <Reply className="h-4 w-4" />
-            </Button>
-            </div>
+            <form onSubmit={handleSendMessage} className="relative">
+              <Textarea
+                placeholder={`Reply to ${selectedCoach.name}...`}
+                className="pr-16"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
+                    handleSendMessage(e as any);
+                  }
+                }}
+              />
+              <Button type="submit" size="icon" className="absolute right-2 top-1/2 -translate-y-1/2">
+                  <Reply className="h-4 w-4" />
+              </Button>
+            </form>
         </div>
         </div>
     </div>
