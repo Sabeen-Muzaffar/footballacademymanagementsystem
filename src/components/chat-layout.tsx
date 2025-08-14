@@ -78,7 +78,7 @@ const initialCoaches = [
 type Coach = (typeof initialCoaches)[number];
 type Message = Coach["messages"][number];
 
-export function ChatLayout({ defaultLayout = [265, 440, 655] }: { defaultLayout: number[] | undefined }) {
+export function ChatLayout({ defaultLayout = [30, 70] }: { defaultLayout: number[] | undefined }) {
   const [coaches, setCoaches] = React.useState<Coach[]>(initialCoaches);
   const [selectedCoach, setSelectedCoach] = React.useState<Coach>(coaches[0]);
   const [message, setMessage] = React.useState("");
@@ -312,11 +312,11 @@ export function ChatLayout({ defaultLayout = [265, 440, 655] }: { defaultLayout:
             }}
             className="h-full items-stretch"
         >
-            <ResizablePanel defaultSize={defaultLayout[0]} minSize={30}>
+            <ResizablePanel defaultSize={defaultLayout?.[0]} minSize={30}>
               <ChatList />
             </ResizablePanel>
             <ResizableHandle withHandle />
-            <ResizablePanel defaultSize={defaultLayout[1]} minSize={30}>
+            <ResizablePanel defaultSize={defaultLayout?.[1]} minSize={30}>
                 <ChatDisplay />
             </ResizablePanel>
         </ResizablePanelGroup>
