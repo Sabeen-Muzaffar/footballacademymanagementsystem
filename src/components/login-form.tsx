@@ -23,13 +23,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 const formSchema = z.object({
   email: z.string().email({ message: 'Please enter a valid email.' }),
   password: z.string().min(1, { message: 'Password is required.' }),
-  role: z.enum(['parent', 'coach', 'player'], { required_error: 'Please select a role.' }),
+  role: z.enum(['parent', 'coach', 'player', 'owner'], { required_error: 'Please select a role.' }),
 });
 
 const roleCredentials = {
   parent: { email: 'parent@gmail.com', password: '2769' },
   coach: { email: 'coach@gmail.com', password: '2769' },
   player: { email: 'player@gmail.com', password: '2769' },
+  owner: { email: 'owner@gmail.com', password: '2769' },
 };
 
 export function LoginForm() {
@@ -51,6 +52,8 @@ export function LoginForm() {
         router.push('/coach/dashboard');
       } else if (values.role === 'player') {
         router.push('/player/dashboard');
+      } else if (values.role === 'owner') {
+        router.push('/owner/dashboard');
       }
       else {
         router.push('/dashboard');
@@ -89,6 +92,7 @@ export function LoginForm() {
                         <SelectItem value="parent">Parent</SelectItem>
                         <SelectItem value="coach">Coach</SelectItem>
                         <SelectItem value="player">Player</SelectItem>
+                        <SelectItem value="owner">Owner</SelectItem>
                       </SelectContent>
                     </Select>
                   <FormMessage />
