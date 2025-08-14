@@ -17,10 +17,12 @@ import {
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Please enter a valid email.' }),
   password: z.string().min(1, { message: 'Password is required.' }),
+  role: z.enum(['parent', 'coach'], { required_error: 'Please select a role.' }),
 });
 
 export function LoginForm() {
@@ -30,13 +32,17 @@ export function LoginForm() {
     defaultValues: {
       email: '',
       password: '',
+      role: 'parent'
     },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
-    // On successful login, redirect to the dashboard
-    router.push('/dashboard');
+    if (values.role === 'coach') {
+      router.push('/coach/dashboard');
+    } else {
+      router.push('/dashboard');
+    }
   }
 
   return (
@@ -49,6 +55,36 @@ export function LoginForm() {
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <CardContent className="space-y-4">
             <FormField
+              control={form.control}
+              name="role"
+              render={({ field }) => (
+                <FormItem className="space-y-3">
+                  <FormLabel>Select your role</FormLabel>
+                  <FormControl>
+                    <RadioGroup
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                      className="flex space-x-4"
+                    >
+                      <FormItem className="flex items-center space-x-2 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="parent" />
+                        </FormControl>
+                        <FormLabel className="font-normal">Parent</FormLabel>
+                      </FormItem>
+                      <FormItem className="flex items-center space-x-2 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="coach" />
+                        </FormControl>
+                        <FormLabel className="font-normal">Coach</FormLabel>
+                      </FormItem>
+                    </RadioGroup>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+             <FormField
               control={form.control}
               name="email"
               render={({ field }) => (
