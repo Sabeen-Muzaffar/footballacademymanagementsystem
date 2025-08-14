@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -25,16 +26,32 @@ const formSchema = z.object({
   role: z.enum(['parent', 'coach', 'player'], { required_error: 'Please select a role.' }),
 });
 
+const roleCredentials = {
+  parent: { email: 'parent@gmail.com', password: '2769' },
+  coach: { email: 'coach@gmail.com', password: '2769' },
+  player: { email: 'player@gmail.com', password: '2769' },
+};
+
 export function LoginForm() {
   const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: '',
-      password: '',
+      email: roleCredentials.parent.email,
+      password: roleCredentials.parent.password,
       role: 'parent'
     },
   });
+
+  const selectedRole = form.watch('role');
+
+  useEffect(() => {
+    if (selectedRole) {
+      const credentials = roleCredentials[selectedRole as keyof typeof roleCredentials];
+      form.setValue('email', credentials.email);
+      form.setValue('password', credentials.password);
+    }
+  }, [selectedRole, form]);
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
@@ -100,7 +117,7 @@ export function LoginForm() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="name@example.com" {...field} />
+                    <Input placeholder="name@example.com" {...field} readOnly />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -118,7 +135,7 @@ export function LoginForm() {
                     </Button>
                   </div>
                   <FormControl>
-                    <Input type="password" placeholder="••••••••" {...field} />
+                    <Input type="password" placeholder="••••••••" {...field} readOnly />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
