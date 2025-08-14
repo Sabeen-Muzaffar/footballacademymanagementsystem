@@ -37,7 +37,7 @@ export default function PlayersPage() {
           <CardTitle>Player Roster</CardTitle>
           <CardDescription>
             A list of all players on your team.
-          </Description>
+          </CardDescription>
         </CardHeader>
         <CardContent>
            <Table>
