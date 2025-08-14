@@ -16,6 +16,7 @@ import {
   CreditCard,
   LogOut,
   Goal,
+  MessageSquare,
 } from "lucide-react"
 
 export function AppNav() {
@@ -25,6 +26,7 @@ export function AppNav() {
     { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
     { href: "/profile", label: "Profile", icon: User },
     { href: "/billing", label: "Billing", icon: CreditCard },
+    { href: "/chat", label: "Chat", icon: MessageSquare },
   ]
 
   return (
