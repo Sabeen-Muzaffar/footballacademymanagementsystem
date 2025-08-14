@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Goal, Handshake, Crosshair, Zap, CheckCircle, Percent, Trophy, BarChart2 } from "lucide-react"
+import { Goal, Handshake, Crosshair, Zap, CheckCircle, Percent, Trophy, BarChart2, Sparkles } from "lucide-react"
 
 
 export default function PlayerDashboardPage() {
