@@ -4,7 +4,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -19,6 +18,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { useToast } from '@/hooks/use-toast';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Please enter a valid email.' }),
@@ -34,34 +34,33 @@ const roleCredentials = {
 
 export function LoginForm() {
   const router = useRouter();
+  const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: roleCredentials.parent.email,
-      password: roleCredentials.parent.password,
+      email: '',
+      password: '',
       role: 'parent'
     },
   });
 
-  const selectedRole = form.watch('role');
-
-  useEffect(() => {
-    if (selectedRole) {
-      const credentials = roleCredentials[selectedRole as keyof typeof roleCredentials];
-      form.setValue('email', credentials.email);
-      form.setValue('password', credentials.password);
-    }
-  }, [selectedRole, form]);
-
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    if (values.role === 'coach') {
-      router.push('/coach/dashboard');
-    } else if (values.role === 'player') {
-      router.push('/player/dashboard');
-    }
-    else {
-      router.push('/dashboard');
+    const credentials = roleCredentials[values.role as keyof typeof roleCredentials];
+    if (values.email === credentials.email && values.password === credentials.password) {
+      if (values.role === 'coach') {
+        router.push('/coach/dashboard');
+      } else if (values.role === 'player') {
+        router.push('/player/dashboard');
+      }
+      else {
+        router.push('/dashboard');
+      }
+    } else {
+        toast({
+            variant: "destructive",
+            title: "Invalid Credentials",
+            description: "Please check your email and password.",
+        })
     }
   }
 
@@ -117,7 +116,7 @@ export function LoginForm() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="name@example.com" {...field} readOnly />
+                    <Input placeholder="name@example.com" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -135,7 +134,7 @@ export function LoginForm() {
                     </Button>
                   </div>
                   <FormControl>
-                    <Input type="password" placeholder="••••••••" {...field} readOnly />
+                    <Input type="password" placeholder="••••••••" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
