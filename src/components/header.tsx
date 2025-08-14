@@ -101,7 +101,7 @@ export function AppHeader() {
           <DropdownMenuItem asChild><Link href="/profile">Profile</Link></DropdownMenuItem>
           <DropdownMenuItem asChild><Link href="/billing">Billing</Link></DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem asChild><Link href="/">Logout</Link></DropdownMenuItem>
+          <DropdownMenuItem asChild><Link href="/login">Logout</Link></DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </header>

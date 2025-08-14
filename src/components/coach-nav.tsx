@@ -68,7 +68,7 @@ export function CoachNav() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild tooltip={{ children: "Log Out", side: "right", align: "center" }}>
-              <Link href="/">
+              <Link href="/login">
                 <LogOut />
                 <span>Log Out</span>
               </Link>
