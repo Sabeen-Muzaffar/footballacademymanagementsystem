@@ -1,3 +1,4 @@
+import Link from "next/link"
 import {
   Card,
   CardContent,
@@ -15,7 +16,7 @@ import {
 } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Calendar, Clock, Users, ClipboardList, BarChart2 } from "lucide-react"
+import { Calendar, Users, ClipboardList, BarChart2 } from "lucide-react"
 
 export default function CoachDashboardPage() {
   return (
@@ -38,7 +39,9 @@ export default function CoachDashboardPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <Button className="w-full">Create New</Button>
+                <Button className="w-full" asChild>
+                    <Link href="/coach/sessions">Create New</Link>
+                </Button>
             </CardContent>
           </Card>
            <Card className="hover:bg-muted/50 transition-colors">
@@ -49,7 +52,9 @@ export default function CoachDashboardPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <Button className="w-full">Take Roll</Button>
+                <Button className="w-full" asChild>
+                    <Link href="/coach/attendance">Take Roll</Link>
+                </Button>
             </CardContent>
           </Card>
           <Card className="hover:bg-muted/50 transition-colors">
@@ -60,7 +65,9 @@ export default function CoachDashboardPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <Button className="w-full">Grade Players</Button>
+                <Button className="w-full" asChild>
+                    <Link href="/coach/grading">Grade Players</Link>
+                </Button>
             </CardContent>
           </Card>
           <Card className="hover:bg-muted/50 transition-colors">
@@ -71,7 +78,9 @@ export default function CoachDashboardPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <Button className="w-full">Open Board</Button>
+                <Button className="w-full" asChild>
+                    <Link href="/coach/tactics">Open Board</Link>
+                </Button>
             </CardContent>
           </Card>
            <Card className="hover:bg-muted/50 transition-colors">
@@ -82,7 +91,9 @@ export default function CoachDashboardPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <Button className="w-full">View Roster</Button>
+                <Button className="w-full" asChild>
+                    <Link href="/coach/players">View Roster</Link>
+                </Button>
             </CardContent>
           </Card>
         </div>
