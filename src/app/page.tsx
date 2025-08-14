@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Goal, ShieldCheck, Star, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function LandingPage() {
   return (
@@ -16,7 +17,7 @@ export default function LandingPage() {
         </Link>
         <nav className="flex items-center gap-4">
           <Link href="#features" className="hidden md:block text-sm font-medium hover:text-primary">Features</Link>
-          <Link href="#about" className="hidden md:block text-sm font-medium hover:text-primary">About</Link>
+          <Link href="#coaches" className="hidden md:block text-sm font-medium hover:text-primary">Coaches</Link>
           <Link href="#testimonials" className="hidden md:block text-sm font-medium hover:text-primary">Testimonials</Link>
           <Button asChild>
             <Link href="/login">Login</Link>
@@ -57,29 +58,23 @@ export default function LandingPage() {
             <h2 className="text-3xl font-bold text-center">Why Choose FootyPro Hub?</h2>
             <p className="text-muted-foreground text-center mt-2 mb-12">Powerful features for every role in the academy.</p>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <Card>
-                <CardHeader className="flex flex-row items-center gap-4">
-                  <Users className="w-8 h-8 text-primary" />
-                  <CardTitle>For Everyone</CardTitle>
-                </CardHeader>
+               <Card className="flex flex-col items-center text-center p-6">
+                <Users className="w-12 h-12 text-primary mb-4" />
+                <CardTitle className="mb-2">For Everyone</CardTitle>
                 <CardContent>
                   <p>Seamless communication, scheduling, and progress tracking for parents, players, and coaches.</p>
                 </CardContent>
               </Card>
-              <Card>
-                <CardHeader className="flex flex-row items-center gap-4">
-                   <Star className="w-8 h-8 text-primary" />
-                  <CardTitle>For Players</CardTitle>
-                </CardHeader>
+              <Card className="flex flex-col items-center text-center p-6">
+                <Star className="w-12 h-12 text-primary mb-4" />
+                <CardTitle className="mb-2">For Players</CardTitle>
                 <CardContent>
                   <p>AI-powered tips, video analysis, and gamified achievements to keep you motivated and improving.</p>
                 </CardContent>
               </Card>
-              <Card>
-                <CardHeader className="flex flex-row items-center gap-4">
-                  <ShieldCheck className="w-8 h-8 text-primary" />
-                  <CardTitle>For Coaches</CardTitle>
-                </CardHeader>
+              <Card className="flex flex-col items-center text-center p-6">
+                <ShieldCheck className="w-12 h-12 text-primary mb-4" />
+                <CardTitle className="mb-2">For Coaches</CardTitle>
                 <CardContent>
                   <p>Plan sessions, track attendance, grade performance, and use a tactical board to strategize.</p>
                 </CardContent>
@@ -89,25 +84,77 @@ export default function LandingPage() {
         </section>
 
         <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-card">
-          <div className="container mx-auto grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-12">
+          <div className="container mx-auto grid items-center gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-12">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">About Our Academy</h2>
               <p className="text-muted-foreground">
                 We are dedicated to nurturing the next generation of football talent. Our state-of-the-art facilities and world-class coaching staff provide an unparalleled environment for growth and development. We believe in a holistic approach, focusing on skill, strategy, and sportsmanship.
               </p>
             </div>
-            <Image
-              src="https://placehold.co/600x400.png"
-              alt="Academy"
-              width={600}
-              height={400}
-              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
-              data-ai-hint="soccer academy"
-            />
+            <div className="grid grid-cols-2 gap-4">
+                <Image
+                    src="https://placehold.co/600x400.png"
+                    alt="Academy Facility"
+                    width={600}
+                    height={400}
+                    className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
+                    data-ai-hint="soccer academy"
+                />
+                 <Image
+                    src="https://placehold.co/600x400.png"
+                    alt="Young players training"
+                    width={600}
+                    height={400}
+                    className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
+                    data-ai-hint="youth soccer"
+                />
+            </div>
           </div>
         </section>
 
-        <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="coaches" className="w-full py-12 md:py-24 lg:py-32">
+            <div className="container mx-auto px-4 md:px-6">
+                <h2 className="text-3xl font-bold text-center">Meet Our Expert Coaches</h2>
+                <p className="text-muted-foreground text-center mt-2 mb-12">World-class mentors dedicated to your success.</p>
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <Card className="text-center p-6">
+                        <Avatar className="w-24 h-24 mx-auto mb-4">
+                            <AvatarImage src="https://placehold.co/100x100.png" data-ai-hint="person portrait" />
+                            <AvatarFallback>DS</AvatarFallback>
+                        </Avatar>
+                        <CardTitle className="text-xl">David Smith</CardTitle>
+                        <p className="text-primary font-semibold">Head Coach, U14s</p>
+                        <CardContent className="mt-4">
+                            <p>With over 15 years of coaching experience and a UEFA 'A' License, David specializes in tactical development and player psychology.</p>
+                        </CardContent>
+                    </Card>
+                    <Card className="text-center p-6">
+                         <Avatar className="w-24 h-24 mx-auto mb-4">
+                            <AvatarImage src="https://placehold.co/100x100.png" data-ai-hint="person portrait" />
+                            <AvatarFallback>SC</AvatarFallback>
+                        </Avatar>
+                        <CardTitle className="text-xl">Sarah Chen</CardTitle>
+                        <p className="text-primary font-semibold">Technical Skills Coach</p>
+                        <CardContent className="mt-4">
+                            <p>A former professional player, Sarah focuses on honing individual technical skills, including dribbling, passing, and shooting precision.</p>
+                        </CardContent>
+                    </Card>
+                    <Card className="text-center p-6">
+                         <Avatar className="w-24 h-24 mx-auto mb-4">
+                            <AvatarImage src="https://placehold.co/100x100.png" data-ai-hint="person portrait" />
+                            <AvatarFallback>ML</AvatarFallback>
+                        </Avatar>
+                        <CardTitle className="text-xl">Michael Lee</CardTitle>
+                        <p className="text-primary font-semibold">Goalkeeping Specialist</p>
+                        <CardContent className="mt-4">
+                            <p>Michael brings a modern approach to goalkeeping, emphasizing agility, distribution, and commanding the penalty area.</p>
+                        </CardContent>
+                    </Card>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-card">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold text-center">What Our Members Say</h2>
              <p className="text-muted-foreground text-center mt-2 mb-12">Real stories from our community.</p>
