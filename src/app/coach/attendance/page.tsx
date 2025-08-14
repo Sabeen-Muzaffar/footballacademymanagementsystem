@@ -39,6 +39,29 @@ const players = [
     { name: 'Sam', avatar: 'https://placehold.co/40x40.png', initial: 'S' },
 ]
 
+function AttendanceRow({ player }: { player: typeof players[0] }) {
+    const [isChecked, setIsChecked] = React.useState(false);
+    
+    React.useEffect(() => {
+        setIsChecked(Math.random() > 0.2);
+    }, []);
+
+    return (
+        <TableRow>
+            <TableCell className="font-medium flex items-center gap-3">
+                <Avatar className="h-8 w-8">
+                    <AvatarImage src={player.avatar} alt={player.name} data-ai-hint="person" />
+                    <AvatarFallback>{player.initial}</AvatarFallback>
+                </Avatar>
+                {player.name}
+            </TableCell>
+            <TableCell className="text-right">
+                <Checkbox checked={isChecked} onCheckedChange={(checked) => setIsChecked(!!checked)} />
+            </TableCell>
+        </TableRow>
+    )
+}
+
 export default function AttendancePage() {
   const [selectedSession, setSelectedSession] = React.useState(sessions[0].id);
 
@@ -78,18 +101,7 @@ export default function AttendancePage() {
                 </TableHeader>
                 <TableBody>
                     {players.map((player) => (
-                        <TableRow key={player.name}>
-                            <TableCell className="font-medium flex items-center gap-3">
-                                <Avatar className="h-8 w-8">
-                                    <AvatarImage src={player.avatar} alt={player.name} data-ai-hint="person" />
-                                    <AvatarFallback>{player.initial}</AvatarFallback>
-                                </Avatar>
-                                {player.name}
-                            </TableCell>
-                            <TableCell className="text-right">
-                                <Checkbox defaultChecked={Math.random() > 0.2} />
-                            </TableCell>
-                        </TableRow>
+                        <AttendanceRow key={player.name} player={player} />
                     ))}
                 </TableBody>
             </Table>
