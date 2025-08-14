@@ -22,7 +22,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 const formSchema = z.object({
   email: z.string().email({ message: 'Please enter a valid email.' }),
   password: z.string().min(1, { message: 'Password is required.' }),
-  role: z.enum(['parent', 'coach'], { required_error: 'Please select a role.' }),
+  role: z.enum(['parent', 'coach', 'player'], { required_error: 'Please select a role.' }),
 });
 
 export function LoginForm() {
@@ -40,7 +40,10 @@ export function LoginForm() {
     console.log(values);
     if (values.role === 'coach') {
       router.push('/coach/dashboard');
-    } else {
+    } else if (values.role === 'player') {
+      router.push('/player/dashboard');
+    }
+    else {
       router.push('/dashboard');
     }
   }
@@ -77,6 +80,12 @@ export function LoginForm() {
                           <RadioGroupItem value="coach" />
                         </FormControl>
                         <FormLabel className="font-normal">Coach</FormLabel>
+                      </FormItem>
+                       <FormItem className="flex items-center space-x-2 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="player" />
+                        </FormControl>
+                        <FormLabel className="font-normal">Player</FormLabel>
                       </FormItem>
                     </RadioGroup>
                   </FormControl>
