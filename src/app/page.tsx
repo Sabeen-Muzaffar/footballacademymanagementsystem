@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Goal, ShieldCheck, Star, Users, Twitter, Instagram, Facebook } from "lucide-react";
+import { Goal, ShieldCheck, Star, Users, Twitter, Instagram, Facebook, Award, BrainCircuit, Dumbbell, Video, TrendingUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -61,44 +61,15 @@ export default function LandingPage() {
 
         <section id="features" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-3xl font-bold text-center">Why Choose FootyPro Hub?</h2>
-            <p className="text-muted-foreground text-center mt-2 mb-12">Powerful features for every role in the academy.</p>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-               <Card className="flex flex-col items-center text-center p-6">
-                <Users className="w-12 h-12 text-primary mb-4" />
-                <CardTitle className="mb-2">For Everyone</CardTitle>
-                <CardContent>
-                  <p>Seamless communication, scheduling, and progress tracking for parents, players, and coaches.</p>
-                </CardContent>
-              </Card>
-              <Card className="flex flex-col items-center text-center p-6">
-                <Star className="w-12 h-12 text-primary mb-4" />
-                <CardTitle className="mb-2">For Players</CardTitle>
-                <CardContent>
-                  <p>AI-powered tips, video analysis, and gamified achievements to keep you motivated and improving.</p>
-                </CardContent>
-              </Card>
-              <Card className="flex flex-col items-center text-center p-6">
-                <ShieldCheck className="w-12 h-12 text-primary mb-4" />
-                <CardTitle className="mb-2">For Coaches</CardTitle>
-                <CardContent>
-                  <p>Plan sessions, track attendance, grade performance, and use a tactical board to strategize.</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-card">
-          <div className="container mx-auto grid items-center gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-12">
-            <div className="space-y-4">
+            <div className="space-y-4 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">About Our Academy</h2>
-              <p className="text-muted-foreground">
+              <p className="max-w-[900px] mx-auto text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 We are dedicated to nurturing the next generation of football talent. Our state-of-the-art facilities and world-class coaching staff provide an unparalleled environment for growth and development. We believe in a holistic approach, focusing on skill, strategy, and sportsmanship.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-                <Image
+            <div className="mx-auto mt-12 grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
+              <div className="grid gap-2">
+                 <Image
                     src="https://placehold.co/600x400.png"
                     alt="Academy Facility"
                     width={600}
@@ -106,6 +77,8 @@ export default function LandingPage() {
                     className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
                     data-ai-hint="soccer academy"
                 />
+              </div>
+              <div className="grid gap-2">
                  <Image
                     src="https://placehold.co/600x400.png"
                     alt="Young players training"
@@ -114,11 +87,78 @@ export default function LandingPage() {
                     className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
                     data-ai-hint="youth soccer"
                 />
+              </div>
+               <div className="grid gap-2">
+                 <Image
+                    src="https://placehold.co/600x400.png"
+                    alt="Coaching session"
+                    width={600}
+                    height={400}
+                    className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
+                    data-ai-hint="soccer coaching"
+                />
+              </div>
+            </div>
+            <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <Card>
+                    <CardHeader className="flex flex-row items-center gap-4">
+                        <Award className="w-8 h-8 text-primary" />
+                        <CardTitle>Professional Coaching</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                    <p>Our UEFA licensed coaches bring a wealth of experience from top-tier football to provide elite training.</p>
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardHeader className="flex flex-row items-center gap-4">
+                        <BrainCircuit className="w-8 h-8 text-primary" />
+                        <CardTitle>Personalized Development</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                    <p>Using AI analytics, we create tailored development plans that focus on each player's unique strengths and weaknesses.</p>
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardHeader className="flex flex-row items-center gap-4">
+                        <Dumbbell className="w-8 h-8 text-primary" />
+                        <CardTitle>Advanced Fitness Programs</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                    <p>Our fitness regimens are designed based on sports science to optimize player stamina, speed, and agility.</p>
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardHeader className="flex flex-row items-center gap-4">
+                        <Video className="w-8 h-8 text-primary" />
+                        <CardTitle>Tactical & Video Analysis</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                    <p>In-depth reviews of match footage help players understand tactical nuances and improve decision-making.</p>
+                    </CardContent>
+                </Card>
+                 <Card>
+                    <CardHeader className="flex flex-row items-center gap-4">
+                        <TrendingUp className="w-8 h-8 text-primary" />
+                        <CardTitle>Pathway to Pro</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                    <p>We have a strong network with professional clubs and scouts, providing a clear pathway for talented players.</p>
+                    </CardContent>
+                </Card>
+                 <Card>
+                    <CardHeader className="flex flex-row items-center gap-4">
+                        <Users className="w-8 h-8 text-primary" />
+                        <CardTitle>Holistic Development</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                    <p>We focus not just on football skills, but also on instilling values like discipline, teamwork, and sportsmanship.</p>
+                    </CardContent>
+                </Card>
             </div>
           </div>
         </section>
 
-        <section id="events" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="events" className="w-full py-12 md:py-24 lg:py-32  bg-card">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold text-center">Upcoming Events</h2>
             <p className="text-muted-foreground text-center mt-2 mb-12">Join us for our next big event and showcase your talent.</p>
@@ -166,7 +206,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="coaches" className="w-full py-12 md:py-24 lg:py-32 bg-card">
+        <section id="coaches" className="w-full py-12 md:py-24 lg:py-32">
             <div className="container mx-auto px-4 md:px-6">
                 <h2 className="text-3xl font-bold text-center">Meet Our Expert Coaches</h2>
                 <p className="text-muted-foreground text-center mt-2 mb-12">World-class mentors dedicated to your success.</p>
@@ -208,7 +248,7 @@ export default function LandingPage() {
             </div>
         </section>
 
-        <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-card">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold text-center">What Our Members Say</h2>
              <p className="text-muted-foreground text-center mt-2 mb-12">Real stories from our community.</p>
@@ -229,7 +269,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="sponsors" className="w-full py-12 md:py-24 lg:py-32 bg-card">
+        <section id="sponsors" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
              <h2 className="text-3xl font-bold text-center">Our Partners & Sponsors</h2>
              <p className="text-muted-foreground text-center mt-2 mb-12">We are proud to collaborate with leading brands in the sports industry.</p>
