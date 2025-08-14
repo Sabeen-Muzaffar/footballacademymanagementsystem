@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Goal, ShieldCheck, Star, Users } from "lucide-react";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Goal, ShieldCheck, Star, Users, Twitter, Instagram, Facebook } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -15,13 +15,19 @@ export default function LandingPage() {
           </div>
           <span className="text-xl font-bold">FootyPro Hub</span>
         </Link>
-        <nav className="flex items-center gap-4">
-          <Link href="#features" className="hidden md:block text-sm font-medium hover:text-primary">Features</Link>
-          <Link href="#coaches" className="hidden md:block text-sm font-medium hover:text-primary">Coaches</Link>
-          <Link href="#testimonials" className="hidden md:block text-sm font-medium hover:text-primary">Testimonials</Link>
+        <nav className="hidden md:flex items-center gap-4">
+          <Link href="#features" className="text-sm font-medium hover:text-primary">Features</Link>
+          <Link href="#events" className="text-sm font-medium hover:text-primary">Events</Link>
+          <Link href="#coaches" className="text-sm font-medium hover:text-primary">Coaches</Link>
+          <Link href="#testimonials" className="text-sm font-medium hover:text-primary">Testimonials</Link>
           <Button asChild>
             <Link href="/login">Login</Link>
           </Button>
+        </nav>
+        <nav className="md:hidden">
+             <Button asChild>
+                <Link href="/login">Login</Link>
+            </Button>
         </nav>
       </header>
 
@@ -112,7 +118,55 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="coaches" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="events" className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container mx-auto px-4 md:px-6">
+            <h2 className="text-3xl font-bold text-center">Upcoming Events</h2>
+            <p className="text-muted-foreground text-center mt-2 mb-12">Join us for our next big event and showcase your talent.</p>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <Card>
+                <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="rounded-t-lg object-cover" data-ai-hint="soccer match" />
+                <CardHeader>
+                  <CardTitle>Youth Summer Camp</CardTitle>
+                  <CardDescription>August 5-9, 2024</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>An intensive week of training for aspiring young players focusing on skills and teamwork.</p>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full">Register Now</Button>
+                </CardFooter>
+              </Card>
+              <Card>
+                <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="rounded-t-lg object-cover" data-ai-hint="soccer tournament" />
+                <CardHeader>
+                  <CardTitle>Annual Club Tournament</CardTitle>
+                  <CardDescription>September 1-3, 2024</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>Compete against the best teams in the region and prove your skills on the big stage.</p>
+                </CardContent>
+                 <CardFooter>
+                  <Button className="w-full">Learn More</Button>
+                </CardFooter>
+              </Card>
+              <Card>
+                <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="rounded-t-lg object-cover" data-ai-hint="soccer scouting" />
+                <CardHeader>
+                  <CardTitle>Scouting Day</CardTitle>
+                  <CardDescription>October 12, 2024</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>An open trial day for talented players to get scouted by professional clubs and coaches.</p>
+                </CardContent>
+                 <CardFooter>
+                  <Button className="w-full">Get Notified</Button>
+                </CardFooter>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        <section id="coaches" className="w-full py-12 md:py-24 lg:py-32 bg-card">
             <div className="container mx-auto px-4 md:px-6">
                 <h2 className="text-3xl font-bold text-center">Meet Our Expert Coaches</h2>
                 <p className="text-muted-foreground text-center mt-2 mb-12">World-class mentors dedicated to your success.</p>
@@ -154,7 +208,7 @@ export default function LandingPage() {
             </div>
         </section>
 
-        <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-card">
+        <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold text-center">What Our Members Say</h2>
              <p className="text-muted-foreground text-center mt-2 mb-12">Real stories from our community.</p>
@@ -174,14 +228,35 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+
+        <section id="sponsors" className="w-full py-12 md:py-24 lg:py-32 bg-card">
+          <div className="container mx-auto px-4 md:px-6">
+             <h2 className="text-3xl font-bold text-center">Our Partners & Sponsors</h2>
+             <p className="text-muted-foreground text-center mt-2 mb-12">We are proud to collaborate with leading brands in the sports industry.</p>
+             <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
+                <Image src="https://placehold.co/150x60.png" width={150} height={60} alt="Sponsor Logo" data-ai-hint="logo" />
+                <Image src="https://placehold.co/150x60.png" width={150} height={60} alt="Sponsor Logo" data-ai-hint="logo" />
+                <Image src="https://placehold.co/150x60.png" width={150} height={60} alt="Sponsor Logo" data-ai-hint="logo" />
+                <Image src="https://placehold.co/150x60.png" width={150} height={60} alt="Sponsor Logo" data-ai-hint="logo" />
+                <Image src="https://placehold.co/150x60.png" width={150} height={60} alt="Sponsor Logo" data-ai-hint="logo" />
+             </div>
+          </div>
+        </section>
       </main>
 
       <footer className="py-6 px-4 md:px-6 border-t bg-card">
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
-              <p className="text-sm text-muted-foreground">&copy; 2024 FootyPro Hub. All rights reserved.</p>
-              <div className="flex gap-4 mt-4 md:mt-0">
+              <div className="text-center md:text-left mb-4 md:mb-0">
+                <p className="text-sm text-muted-foreground">&copy; 2024 FootyPro Hub. All rights reserved.</p>
+              </div>
+              <div className="flex gap-4 items-center">
                   <Link href="#" className="text-sm hover:text-primary">Privacy Policy</Link>
                   <Link href="#" className="text-sm hover:text-primary">Terms of Service</Link>
+                   <div className="flex gap-2">
+                        <Link href="#" className="text-muted-foreground hover:text-primary"><Twitter className="w-5 h-5" /></Link>
+                        <Link href="#" className="text-muted-foreground hover:text-primary"><Instagram className="w-5 h-5" /></Link>
+                        <Link href="#" className="text-muted-foreground hover:text-primary"><Facebook className="w-5 h-5" /></Link>
+                    </div>
               </div>
           </div>
       </footer>
