@@ -17,6 +17,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useToast } from "@/hooks/use-toast"
 import { useEffect } from "react"
+import { Badge } from "@/components/ui/badge"
 
 export function AppHeader() {
   const { toast } = useToast()
@@ -39,10 +40,51 @@ export function AppHeader() {
       <div className="w-full flex-1">
         {/* Can add a global search here if needed */}
       </div>
-      <Button variant="ghost" size="icon" className="rounded-full">
-        <Bell className="h-5 w-5" />
-        <span className="sr-only">Toggle notifications</span>
-      </Button>
+       <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="ghost" size="icon" className="rounded-full">
+            <Bell className="h-5 w-5" />
+            <span className="sr-only">Toggle notifications</span>
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" className="w-80">
+          <DropdownMenuLabel className="flex items-center justify-between">
+            <span>Notifications</span>
+            <Badge variant="secondary">3 New</Badge>
+          </DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>
+            <div className="flex flex-col">
+              <p className="font-semibold">Match Reminder</p>
+              <p className="text-xs text-muted-foreground">
+                Your next match against 'The Rovers' starts in 2 hours.
+              </p>
+            </div>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <div className="flex flex-col">
+              <p className="font-semibold">New Message</p>
+              <p className="text-xs text-muted-foreground">
+                Coach David sent you a message.
+              </p>
+            </div>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <div className="flex flex-col">
+              <p className="font-semibold">Invoice Paid</p>
+              <p className="text-xs text-muted-foreground">
+                Your payment for the summer camp has been received.
+              </p>
+            </div>
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
+           <DropdownMenuItem className="text-center">
+            <Link href="#" className="w-full">
+              View all notifications
+            </Link>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="secondary" size="icon" className="rounded-full">
