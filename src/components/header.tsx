@@ -18,6 +18,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useToast } from "@/hooks/use-toast"
 import { useEffect } from "react"
 import { Badge } from "@/components/ui/badge"
+import { ThemeToggle } from "./theme-toggle"
 
 export function AppHeader() {
   const { toast } = useToast()
@@ -40,6 +41,7 @@ export function AppHeader() {
       <div className="w-full flex-1">
         {/* Can add a global search here if needed */}
       </div>
+       <ThemeToggle />
        <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" size="icon" className="rounded-full">
@@ -89,7 +91,7 @@ export function AppHeader() {
         <DropdownMenuTrigger asChild>
           <Button variant="secondary" size="icon" className="rounded-full">
             <Avatar>
-              <AvatarImage src="https://placehold.co/40x40.png" alt="@parent" data-ai-hint="person" />
+              <AvatarImage src="/logo.jpeg" alt="@parent" data-ai-hint="person" />
               <AvatarFallback>PA</AvatarFallback>
             </Avatar>
             <span className="sr-only">Toggle user menu</span>
