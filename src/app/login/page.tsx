@@ -8,7 +8,7 @@ export default function LoginPage() {
   return (
     <div className="relative flex min-h-screen w-full items-center justify-center p-4">
       <Image 
-        src="/login.jpg" 
+        src="/Login.jpg" 
         alt="Login background" 
         fill={true}
         objectFit="cover" 
