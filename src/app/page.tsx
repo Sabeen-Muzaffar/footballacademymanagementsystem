@@ -176,7 +176,7 @@ export default function LandingPage() {
                   <div className="p-1">
                     <Card className="overflow-hidden">
                       <div className="grid md:grid-cols-2">
-                        <div className="bg-muted min-h-[250px] md:h-full"></div>
+                        <Image src="/event1.jpg" alt="Youth Summer Camp" width={600} height={400} className="w-full h-full object-cover min-h-[250px]" data-ai-hint="soccer camp" />
                         <div className="p-6 flex flex-col justify-between">
                             <div>
                                 <CardHeader>
@@ -199,7 +199,7 @@ export default function LandingPage() {
                   <div className="p-1">
                     <Card className="overflow-hidden">
                       <div className="grid md:grid-cols-2">
-                        <div className="bg-muted min-h-[250px] md:h-full"></div>
+                        <Image src="/event2.jpg" alt="Annual Club Tournament" width={600} height={400} className="w-full h-full object-cover min-h-[250px]" data-ai-hint="soccer tournament" />
                          <div className="p-6 flex flex-col justify-between">
                             <div>
                                 <CardHeader>
@@ -222,7 +222,7 @@ export default function LandingPage() {
                   <div className="p-1">
                     <Card className="overflow-hidden">
                       <div className="grid md:grid-cols-2">
-                        <div className="bg-muted min-h-[250px] md:h-full"></div>
+                        <Image src="/event3.jpg" alt="Scouting Day" width={600} height={400} className="w-full h-full object-cover min-h-[250px]" data-ai-hint="soccer scouting" />
                        <div className="p-6 flex flex-col justify-between">
                           <div>
                               <CardHeader>
