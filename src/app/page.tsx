@@ -175,9 +175,9 @@ export default function LandingPage() {
                 <CarouselItem>
                   <div className="p-1">
                     <Card className="overflow-hidden">
-                      <div className="grid md:grid-cols-2 items-center">
-                        <div className="bg-muted aspect-video md:h-full"></div>
-                        <div className="flex flex-col justify-center p-6 text-center md:text-left">
+                      <div className="grid md:grid-cols-2">
+                        <div className="bg-muted aspect-video"></div>
+                        <div className="p-6">
                             <CardHeader>
                                 <CardTitle>Youth Summer Camp</CardTitle>
                                 <CardDescription>August 5-9, 2024</CardDescription>
@@ -185,7 +185,7 @@ export default function LandingPage() {
                             <CardContent>
                                 <p>An intensive week of training for aspiring young players focusing on skills and teamwork.</p>
                             </CardContent>
-                            <CardFooter className="justify-center md:justify-start">
+                            <CardFooter>
                                 <Button>Register Now</Button>
                             </CardFooter>
                         </div>
@@ -196,9 +196,9 @@ export default function LandingPage() {
                 <CarouselItem>
                   <div className="p-1">
                     <Card className="overflow-hidden">
-                      <div className="grid md:grid-cols-2 items-center">
-                        <div className="bg-muted aspect-video md:h-full"></div>
-                         <div className="flex flex-col justify-center p-6 text-center md:text-left">
+                      <div className="grid md:grid-cols-2">
+                        <div className="bg-muted aspect-video"></div>
+                         <div className="p-6">
                             <CardHeader>
                                 <CardTitle>Annual Club Tournament</CardTitle>
                                 <CardDescription>September 1-3, 2024</CardDescription>
@@ -206,7 +206,7 @@ export default function LandingPage() {
                             <CardContent>
                                 <p>Compete against the best teams in the region and prove your skills on the big stage.</p>
                             </CardContent>
-                            <CardFooter className="justify-center md:justify-start">
+                            <CardFooter>
                                 <Button>Learn More</Button>
                             </CardFooter>
                         </div>
@@ -217,9 +217,9 @@ export default function LandingPage() {
                 <CarouselItem>
                   <div className="p-1">
                     <Card className="overflow-hidden">
-                      <div className="grid md:grid-cols-2 items-center">
-                        <div className="bg-muted aspect-video md:h-full"></div>
-                       <div className="flex flex-col justify-center p-6 text-center md:text-left">
+                      <div className="grid md:grid-cols-2">
+                        <div className="bg-muted aspect-video"></div>
+                       <div className="p-6">
                           <CardHeader>
                               <CardTitle>Scouting Day</CardTitle>
                               <CardDescription>October 12, 2024</CardDescription>
@@ -227,7 +227,7 @@ export default function LandingPage() {
                           <CardContent>
                               <p>An open trial day for talented players to get scouted by professional clubs and coaches.</p>
                           </CardContent>
-                          <CardFooter className="justify-center md:justify-start">
+                          <CardFooter>
                               <Button>Get Notified</Button>
                           </CardFooter>
                       </div>
