@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Auraan',
   description: 'The all-in-one platform for football professionals.',
   icons: {
-    icon: '/logo.jpeg',
+    icon: '/logo.ico',
   },
 };
 
