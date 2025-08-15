@@ -168,63 +168,75 @@ export default function LandingPage() {
                 align: "start",
                 loop: true,
               }}
-              className="w-full max-w-4xl mx-auto"
+              className="w-full max-w-6xl mx-auto"
             >
               <CarouselContent>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem>
                   <div className="p-1">
-                    <Card>
-                      <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="rounded-t-lg object-cover" data-ai-hint="soccer match" />
-                      <CardHeader>
-                        <CardTitle>Youth Summer Camp</CardTitle>
-                        <CardDescription>August 5-9, 2024</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <p>An intensive week of training for aspiring young players focusing on skills and teamwork.</p>
-                      </CardContent>
-                      <CardFooter>
-                        <Button className="w-full">Register Now</Button>
-                      </CardFooter>
+                    <Card className="overflow-hidden">
+                      <div className="grid md:grid-cols-2 gap-0">
+                        <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="w-full h-full object-cover" data-ai-hint="soccer match" />
+                        <div className="flex flex-col justify-center p-6">
+                            <CardHeader>
+                                <CardTitle>Youth Summer Camp</CardTitle>
+                                <CardDescription>August 5-9, 2024</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <p>An intensive week of training for aspiring young players focusing on skills and teamwork.</p>
+                            </CardContent>
+                            <CardFooter>
+                                <Button className="w-full">Register Now</Button>
+                            </CardFooter>
+                        </div>
+                      </div>
                     </Card>
                   </div>
                 </CarouselItem>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem>
                   <div className="p-1">
-                    <Card>
-                      <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="rounded-t-lg object-cover" data-ai-hint="soccer tournament" />
-                      <CardHeader>
-                        <CardTitle>Annual Club Tournament</CardTitle>
-                        <CardDescription>September 1-3, 2024</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <p>Compete against the best teams in the region and prove your skills on the big stage.</p>
-                      </CardContent>
-                      <CardFooter>
-                        <Button className="w-full">Learn More</Button>
-                      </CardFooter>
+                    <Card className="overflow-hidden">
+                       <div className="grid md:grid-cols-2 gap-0">
+                         <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="w-full h-full object-cover" data-ai-hint="soccer tournament" />
+                        <div className="flex flex-col justify-center p-6">
+                            <CardHeader>
+                                <CardTitle>Annual Club Tournament</CardTitle>
+                                <CardDescription>September 1-3, 2024</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <p>Compete against the best teams in the region and prove your skills on the big stage.</p>
+                            </CardContent>
+                            <CardFooter>
+                                <Button className="w-full">Learn More</Button>
+                            </CardFooter>
+                        </div>
+                       </div>
                     </Card>
                   </div>
                 </CarouselItem>
-                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem>
                   <div className="p-1">
-                    <Card>
-                      <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="rounded-t-lg object-cover" data-ai-hint="soccer scouting" />
-                      <CardHeader>
-                        <CardTitle>Scouting Day</CardTitle>
-                        <CardDescription>October 12, 2024</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <p>An open trial day for talented players to get scouted by professional clubs and coaches.</p>
-                      </CardContent>
-                      <CardFooter>
-                        <Button className="w-full">Get Notified</Button>
-                      </CardFooter>
+                    <Card className="overflow-hidden">
+                      <div className="grid md:grid-cols-2 gap-0">
+                        <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="w-full h-full object-cover" data-ai-hint="soccer scouting" />
+                        <div className="flex flex-col justify-center p-6">
+                            <CardHeader>
+                                <CardTitle>Scouting Day</CardTitle>
+                                <CardDescription>October 12, 2024</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <p>An open trial day for talented players to get scouted by professional clubs and coaches.</p>
+                            </CardContent>
+                            <CardFooter>
+                                <Button className="w-full">Get Notified</Button>
+                            </CardFooter>
+                        </div>
+                      </div>
                     </Card>
                   </div>
                 </CarouselItem>
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              <CarouselPrevious className="-left-4" />
+              <CarouselNext className="-right-4" />
             </Carousel>
           </div>
         </section>
