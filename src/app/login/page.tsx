@@ -10,7 +10,7 @@ export default function LoginPage() {
       <Image 
         src="/login.jpg" 
         alt="Login background" 
-        layout="fill" 
+        fill={true}
         objectFit="cover" 
         className="opacity-20"
         data-ai-hint="soccer player"
