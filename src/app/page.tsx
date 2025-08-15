@@ -4,6 +4,7 @@ import { Goal, ShieldCheck, Star, Users, Twitter, Instagram, Facebook, Award, Br
 import Image from "next/image";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 export default function LandingPage() {
   return (
@@ -158,53 +159,76 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="events" className="w-full py-12 md:py-24 lg:py-32  bg-card">
+        <section id="events" className="w-full py-12 md:py-24 lg:py-32 bg-card">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold text-center">Upcoming Events</h2>
             <p className="text-muted-foreground text-center mt-2 mb-12">Join us for our next big event and showcase your talent.</p>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <Card>
-                <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="rounded-t-lg object-cover" data-ai-hint="soccer match" />
-                <CardHeader>
-                  <CardTitle>Youth Summer Camp</CardTitle>
-                  <CardDescription>August 5-9, 2024</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>An intensive week of training for aspiring young players focusing on skills and teamwork.</p>
-                </CardContent>
-                <CardFooter>
-                  <Button className="w-full">Register Now</Button>
-                </CardFooter>
-              </Card>
-              <Card>
-                <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="rounded-t-lg object-cover" data-ai-hint="soccer tournament" />
-                <CardHeader>
-                  <CardTitle>Annual Club Tournament</CardTitle>
-                  <CardDescription>September 1-3, 2024</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>Compete against the best teams in the region and prove your skills on the big stage.</p>
-                </CardContent>
-                 <CardFooter>
-                  <Button className="w-full">Learn More</Button>
-                </CardFooter>
-              </Card>
-              <Card>
-                <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="rounded-t-lg object-cover" data-ai-hint="soccer scouting" />
-                <CardHeader>
-                  <CardTitle>Scouting Day</CardTitle>
-                  <CardDescription>October 12, 2024</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>An open trial day for talented players to get scouted by professional clubs and coaches.</p>
-                </CardContent>
-                 <CardFooter>
-                  <Button className="w-full">Get Notified</Button>
-                </CardFooter>
-              </Card>
-            </div>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full max-w-4xl mx-auto"
+            >
+              <CarouselContent>
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1">
+                    <Card>
+                      <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="rounded-t-lg object-cover" data-ai-hint="soccer match" />
+                      <CardHeader>
+                        <CardTitle>Youth Summer Camp</CardTitle>
+                        <CardDescription>August 5-9, 2024</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <p>An intensive week of training for aspiring young players focusing on skills and teamwork.</p>
+                      </CardContent>
+                      <CardFooter>
+                        <Button className="w-full">Register Now</Button>
+                      </CardFooter>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1">
+                    <Card>
+                      <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="rounded-t-lg object-cover" data-ai-hint="soccer tournament" />
+                      <CardHeader>
+                        <CardTitle>Annual Club Tournament</CardTitle>
+                        <CardDescription>September 1-3, 2024</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <p>Compete against the best teams in the region and prove your skills on the big stage.</p>
+                      </CardContent>
+                      <CardFooter>
+                        <Button className="w-full">Learn More</Button>
+                      </CardFooter>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1">
+                    <Card>
+                      <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="rounded-t-lg object-cover" data-ai-hint="soccer scouting" />
+                      <CardHeader>
+                        <CardTitle>Scouting Day</CardTitle>
+                        <CardDescription>October 12, 2024</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <p>An open trial day for talented players to get scouted by professional clubs and coaches.</p>
+                      </CardContent>
+                      <CardFooter>
+                        <Button className="w-full">Get Notified</Button>
+                      </CardFooter>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </section>
+
 
         <section id="coaches" className="w-full py-12 md:py-24 lg:py-32">
             <div className="container mx-auto px-4 md:px-6">
