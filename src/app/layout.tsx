@@ -6,6 +6,9 @@ import { ThemeProvider } from '@/components/theme-provider';
 export const metadata: Metadata = {
   title: 'Auraan',
   description: 'The all-in-one platform for football professionals.',
+  icons: {
+    icon: '/logo.jpeg',
+  },
 };
 
 export default function RootLayout({
