@@ -35,7 +35,7 @@ export default function LandingPage() {
       <main className="flex-1">
         <section className="relative w-full py-20 md:py-32 lg:py-40 bg-card">
             <Image 
-                src="/main-headline.jpg" 
+                src="/main.jpg" 
                 alt="Hero" 
                 layout="fill" 
                 objectFit="cover" 
