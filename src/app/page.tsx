@@ -256,7 +256,7 @@ export default function LandingPage() {
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                     <Card className="text-center p-6">
                         <Avatar className="w-24 h-24 mx-auto mb-4">
-                            <AvatarImage src="https://placehold.co/100x100.png" data-ai-hint="person portrait" />
+                            <AvatarImage src="/coach1.jpg" data-ai-hint="person portrait" />
                             <AvatarFallback>DS</AvatarFallback>
                         </Avatar>
                         <CardTitle className="text-xl">David Smith</CardTitle>
@@ -267,7 +267,7 @@ export default function LandingPage() {
                     </Card>
                     <Card className="text-center p-6">
                          <Avatar className="w-24 h-24 mx-auto mb-4">
-                            <AvatarImage src="https://placehold.co/100x100.png" data-ai-hint="person portrait" />
+                            <AvatarImage src="/coach2.jpg" data-ai-hint="person portrait" />
                             <AvatarFallback>SC</AvatarFallback>
                         </Avatar>
                         <CardTitle className="text-xl">Sarah Chen</CardTitle>
@@ -278,7 +278,7 @@ export default function LandingPage() {
                     </Card>
                     <Card className="text-center p-6">
                          <Avatar className="w-24 h-24 mx-auto mb-4">
-                            <AvatarImage src="https://placehold.co/100x100.png" data-ai-hint="person portrait" />
+                            <AvatarImage src="/coach3.jpg" data-ai-hint="person portrait" />
                             <AvatarFallback>ML</AvatarFallback>
                         </Avatar>
                         <CardTitle className="text-xl">Michael Lee</CardTitle>
