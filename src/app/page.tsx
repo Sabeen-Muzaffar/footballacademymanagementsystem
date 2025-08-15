@@ -71,7 +71,7 @@ export default function LandingPage() {
             <div className="mx-auto mt-12 grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
               <div className="grid gap-2">
                  <Image
-                    src="https://placehold.co/600x400.png"
+                    src="/1.jpg"
                     alt="Academy Facility"
                     width={600}
                     height={400}
@@ -81,7 +81,7 @@ export default function LandingPage() {
               </div>
               <div className="grid gap-2">
                  <Image
-                    src="https://placehold.co/600x400.png"
+                    src="/2.jpg"
                     alt="Young players training"
                     width={600}
                     height={400}
@@ -91,7 +91,7 @@ export default function LandingPage() {
               </div>
                <div className="grid gap-2">
                  <Image
-                    src="https://placehold.co/600x400.png"
+                    src="/3.jpg"
                     alt="Coaching session"
                     width={600}
                     height={400}
