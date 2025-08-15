@@ -33,7 +33,7 @@ export function AppNav() {
     <>
       <SidebarHeader className="p-4">
         <Link href="/dashboard" className="flex items-center gap-2">
-          <Image src="/logo.jpeg" alt="Auraan Logo" width={32} height={32} className="rounded-lg" />
+          <Image src="/logo.jpeg" alt="Auraan Logo" width={40} height={40} className="rounded-lg" />
           <span className="font-semibold text-lg text-foreground">Auraan</span>
         </Link>
       </SidebarHeader>

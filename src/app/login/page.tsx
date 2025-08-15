@@ -23,7 +23,7 @@ export default function LoginPage() {
       </Link>
       <div className="w-full max-w-md relative z-10">
         <div className="flex flex-col items-center text-center mb-8">
-          <Image src="/logo.jpeg" alt="Auraan Logo" width={48} height={48} className="rounded-full mb-4" />
+          <Image src="/logo.jpeg" alt="Auraan Logo" width={64} height={64} className="rounded-full mb-4" />
           <h1 className="text-3xl font-bold text-foreground">Auraan</h1>
           <p className="text-muted-foreground">Your all-in-one football management suite</p>
         </div>

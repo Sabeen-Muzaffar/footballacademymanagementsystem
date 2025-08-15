@@ -13,7 +13,7 @@ export default function LandingPage() {
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 flex items-center justify-between h-16 px-4 md:px-6 bg-background/80 backdrop-blur-sm">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.jpeg" alt="Auraan Logo" width={32} height={32} className="rounded-lg" />
+          <Image src="/logo.jpeg" alt="Auraan Logo" width={40} height={40} className="rounded-lg" />
           <span className="text-xl font-bold">Auraan</span>
         </Link>
         <nav className="hidden md:flex items-center gap-4">
@@ -175,7 +175,7 @@ export default function LandingPage() {
                   <div className="p-1">
                     <Card className="overflow-hidden">
                       <div className="grid md:grid-cols-2">
-                        <Image src="/event1.jpg" alt="Youth Summer Camp" width={600} height={400} className="w-full h-full object-cover min-h-[250px]" data-ai-hint="soccer camp" />
+                        <Image src="/event1.jpg" alt="Youth Summer Camp" width={600} height={400} className="w-full h-full object-cover min-h-[250px] aspect-video" data-ai-hint="soccer camp" />
                         <div className="p-6 flex flex-col justify-between">
                             <div>
                                 <CardHeader>
@@ -198,7 +198,7 @@ export default function LandingPage() {
                   <div className="p-1">
                     <Card className="overflow-hidden">
                       <div className="grid md:grid-cols-2">
-                        <Image src="/event2.jpg" alt="Annual Club Tournament" width={600} height={400} className="w-full h-full object-cover min-h-[250px]" data-ai-hint="soccer tournament" />
+                        <Image src="/event2.jpg" alt="Annual Club Tournament" width={600} height={400} className="w-full h-full object-cover min-h-[250px] aspect-video" data-ai-hint="soccer tournament" />
                          <div className="p-6 flex flex-col justify-between">
                             <div>
                                 <CardHeader>
@@ -221,7 +221,7 @@ export default function LandingPage() {
                   <div className="p-1">
                     <Card className="overflow-hidden">
                       <div className="grid md:grid-cols-2">
-                        <Image src="/event3.jpg" alt="Scouting Day" width={600} height={400} className="w-full h-full object-cover min-h-[250px]" data-ai-hint="soccer scouting" />
+                        <Image src="/event3.jpg" alt="Scouting Day" width={600} height={400} className="w-full h-full object-cover min-h-[250px] aspect-video" data-ai-hint="soccer scouting" />
                        <div className="p-6 flex flex-col justify-between">
                           <div>
                               <CardHeader>
