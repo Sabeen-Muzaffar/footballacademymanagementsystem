@@ -13,8 +13,8 @@ export default function LandingPage() {
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 flex items-center justify-between h-16 px-4 md:px-6 bg-background/80 backdrop-blur-sm">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.jpeg" alt="FootyPro Hub Logo" width={32} height={32} className="rounded-lg" />
-          <span className="text-xl font-bold">FootyPro Hub</span>
+          <Image src="/logo.jpeg" alt="Auraan Logo" width={32} height={32} className="rounded-lg" />
+          <span className="text-xl font-bold">Auraan</span>
         </Link>
         <nav className="hidden md:flex items-center gap-4">
           <Link href="#features" className="text-sm font-medium hover:text-primary">Features</Link>
@@ -47,7 +47,7 @@ export default function LandingPage() {
                     The Future of Football Management
                 </h1>
                 <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground md:text-xl">
-                    FootyPro Hub is the all-in-one platform to connect players, coaches, and parents. Elevate your game with cutting-edge tools and insights.
+                    Auraan is the all-in-one platform to connect players, coaches, and parents. Elevate your game with cutting-edge tools and insights.
                 </p>
                 <div className="mt-8 flex justify-center gap-4">
                     <Button asChild size="lg">
@@ -296,7 +296,7 @@ export default function LandingPage() {
              <p className="text-muted-foreground text-center mt-2 mb-12">Real stories from our community.</p>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               <Card className="p-6">
-                <p>"FootyPro Hub has revolutionized how I track my son's progress. The insights are incredible!"</p>
+                <p>"Auraan has revolutionized how I track my son's progress. The insights are incredible!"</p>
                 <p className="font-semibold mt-4">- A Proud Parent</p>
               </Card>
               <Card className="p-6">
@@ -329,7 +329,7 @@ export default function LandingPage() {
       <footer className="py-6 px-4 md:px-6 border-t bg-card">
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
               <div className="text-center md:text-left mb-4 md:mb-0">
-                <p className="text-sm text-muted-foreground">&copy; 2024 FootyPro Hub. All rights reserved.</p>
+                <p className="text-sm text-muted-foreground">&copy; 2024 Auraan. All rights reserved.</p>
               </div>
               <div className="flex gap-4 items-center">
                   <Link href="#" className="text-sm hover:text-primary">Privacy Policy</Link>

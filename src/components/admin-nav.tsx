@@ -37,8 +37,8 @@ export function AdminNav() {
     <>
       <SidebarHeader className="p-4">
         <Link href="/admin/dashboard" className="flex items-center gap-2">
-           <Image src="/logo.jpeg" alt="FootyPro Hub Logo" width={32} height={32} className="rounded-lg" />
-          <span className="font-semibold text-lg text-foreground">FootyPro Hub</span>
+           <Image src="/logo.jpeg" alt="Auraan Logo" width={32} height={32} className="rounded-lg" />
+          <span className="font-semibold text-lg text-foreground">Auraan</span>
         </Link>
       </SidebarHeader>
       <SidebarContent className="p-4">
