@@ -1,5 +1,5 @@
 import { LoginForm } from '@/components/login-form';
-import { Goal, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -23,9 +23,7 @@ export default function LoginPage() {
       </Link>
       <div className="w-full max-w-md relative z-10">
         <div className="flex flex-col items-center text-center mb-8">
-          <div className="bg-primary p-3 rounded-full mb-4">
-            <Goal className="h-8 w-8 text-primary-foreground" />
-          </div>
+          <Image src="/logo.jpeg" alt="FootyPro Hub Logo" width={48} height={48} className="rounded-full mb-4" />
           <h1 className="text-3xl font-bold text-foreground">FootyPro Hub</h1>
           <p className="text-muted-foreground">Your all-in-one football management suite</p>
         </div>

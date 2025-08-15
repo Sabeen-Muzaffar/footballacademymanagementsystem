@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import {
   SidebarContent,
@@ -17,7 +18,6 @@ import {
   Video,
   Trophy,
   LogOut,
-  Goal,
 } from "lucide-react"
 
 export function PlayerNav() {
@@ -35,9 +35,7 @@ export function PlayerNav() {
     <>
       <SidebarHeader className="p-4">
         <Link href="/player/dashboard" className="flex items-center gap-2">
-          <div className="bg-primary p-2 rounded-lg">
-            <Goal className="w-6 h-6 text-primary-foreground" />
-          </div>
+          <Image src="/logo.jpeg" alt="FootyPro Hub Logo" width={32} height={32} className="rounded-lg" />
           <span className="font-semibold text-lg text-foreground">FootyPro Hub</span>
         </Link>
       </SidebarHeader>

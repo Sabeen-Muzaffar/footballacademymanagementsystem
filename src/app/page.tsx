@@ -1,7 +1,8 @@
 
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Goal, ShieldCheck, Star, Users, Twitter, Instagram, Facebook, Award, BrainCircuit, Dumbbell, Video, TrendingUp } from "lucide-react";
+import { ShieldCheck, Star, Users, Twitter, Instagram, Facebook, Award, BrainCircuit, Dumbbell, Video, TrendingUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -12,9 +13,7 @@ export default function LandingPage() {
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 flex items-center justify-between h-16 px-4 md:px-6 bg-background/80 backdrop-blur-sm">
         <Link href="/" className="flex items-center gap-2">
-          <div className="bg-primary p-2 rounded-lg">
-            <Goal className="w-6 h-6 text-primary-foreground" />
-          </div>
+          <Image src="/logo.jpeg" alt="FootyPro Hub Logo" width={32} height={32} className="rounded-lg" />
           <span className="text-xl font-bold">FootyPro Hub</span>
         </Link>
         <nav className="hidden md:flex items-center gap-4">
