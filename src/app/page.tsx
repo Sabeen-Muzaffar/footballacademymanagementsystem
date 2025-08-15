@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Goal, ShieldCheck, Star, Users, Twitter, Instagram, Facebook, Award, BrainCircuit, Dumbbell, Video, TrendingUp } from "lucide-react";
@@ -175,7 +176,7 @@ export default function LandingPage() {
                   <div className="p-1">
                     <Card className="overflow-hidden">
                       <div className="grid md:grid-cols-2 gap-0">
-                        <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="w-full h-full object-cover" data-ai-hint="soccer match" />
+                        <Image src="/event1.jpg" width={600} height={400} alt="Event" className="w-full h-full object-cover" data-ai-hint="soccer match" />
                         <div className="flex flex-col justify-center p-6">
                             <CardHeader>
                                 <CardTitle>Youth Summer Camp</CardTitle>
@@ -196,7 +197,7 @@ export default function LandingPage() {
                   <div className="p-1">
                     <Card className="overflow-hidden">
                        <div className="grid md:grid-cols-2 gap-0">
-                         <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="w-full h-full object-cover" data-ai-hint="soccer tournament" />
+                         <Image src="/event2.jpg" width={600} height={400} alt="Event" className="w-full h-full object-cover" data-ai-hint="soccer tournament" />
                         <div className="flex flex-col justify-center p-6">
                             <CardHeader>
                                 <CardTitle>Annual Club Tournament</CardTitle>
@@ -217,7 +218,7 @@ export default function LandingPage() {
                   <div className="p-1">
                     <Card className="overflow-hidden">
                       <div className="grid md:grid-cols-2 gap-0">
-                        <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Event" className="w-full h-full object-cover" data-ai-hint="soccer scouting" />
+                        <Image src="/event3.jpg" width={600} height={400} alt="Event" className="w-full h-full object-cover" data-ai-hint="soccer scouting" />
                         <div className="flex flex-col justify-center p-6">
                             <CardHeader>
                                 <CardTitle>Scouting Day</CardTitle>
