@@ -175,17 +175,20 @@ export default function LandingPage() {
                 <CarouselItem>
                   <div className="p-1">
                     <Card className="overflow-hidden">
-                      <div className="flex flex-col justify-center p-6 text-center">
-                          <CardHeader>
-                              <CardTitle>Youth Summer Camp</CardTitle>
-                              <CardDescription>August 5-9, 2024</CardDescription>
-                          </CardHeader>
-                          <CardContent>
-                              <p>An intensive week of training for aspiring young players focusing on skills and teamwork.</p>
-                          </CardContent>
-                          <CardFooter className="justify-center">
-                              <Button>Register Now</Button>
-                          </CardFooter>
+                      <div className="grid md:grid-cols-2 items-center">
+                        <div className="bg-muted aspect-video md:h-full"></div>
+                        <div className="flex flex-col justify-center p-6 text-center md:text-left">
+                            <CardHeader>
+                                <CardTitle>Youth Summer Camp</CardTitle>
+                                <CardDescription>August 5-9, 2024</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <p>An intensive week of training for aspiring young players focusing on skills and teamwork.</p>
+                            </CardContent>
+                            <CardFooter className="justify-center md:justify-start">
+                                <Button>Register Now</Button>
+                            </CardFooter>
+                        </div>
                       </div>
                     </Card>
                   </div>
@@ -193,25 +196,30 @@ export default function LandingPage() {
                 <CarouselItem>
                   <div className="p-1">
                     <Card className="overflow-hidden">
-                       <div className="flex flex-col justify-center p-6 text-center">
-                          <CardHeader>
-                              <CardTitle>Annual Club Tournament</CardTitle>
-                              <CardDescription>September 1-3, 2024</CardDescription>
-                          </CardHeader>
-                          <CardContent>
-                              <p>Compete against the best teams in the region and prove your skills on the big stage.</p>
-                          </CardContent>
-                          <CardFooter className="justify-center">
-                              <Button>Learn More</Button>
-                          </CardFooter>
-                      </div>
+                      <div className="grid md:grid-cols-2 items-center">
+                        <div className="bg-muted aspect-video md:h-full"></div>
+                         <div className="flex flex-col justify-center p-6 text-center md:text-left">
+                            <CardHeader>
+                                <CardTitle>Annual Club Tournament</CardTitle>
+                                <CardDescription>September 1-3, 2024</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <p>Compete against the best teams in the region and prove your skills on the big stage.</p>
+                            </CardContent>
+                            <CardFooter className="justify-center md:justify-start">
+                                <Button>Learn More</Button>
+                            </CardFooter>
+                        </div>
+                       </div>
                     </Card>
                   </div>
                 </CarouselItem>
                 <CarouselItem>
                   <div className="p-1">
                     <Card className="overflow-hidden">
-                       <div className="flex flex-col justify-center p-6 text-center">
+                      <div className="grid md:grid-cols-2 items-center">
+                        <div className="bg-muted aspect-video md:h-full"></div>
+                       <div className="flex flex-col justify-center p-6 text-center md:text-left">
                           <CardHeader>
                               <CardTitle>Scouting Day</CardTitle>
                               <CardDescription>October 12, 2024</CardDescription>
@@ -219,9 +227,10 @@ export default function LandingPage() {
                           <CardContent>
                               <p>An open trial day for talented players to get scouted by professional clubs and coaches.</p>
                           </CardContent>
-                          <CardFooter className="justify-center">
+                          <CardFooter className="justify-center md:justify-start">
                               <Button>Get Notified</Button>
                           </CardFooter>
+                      </div>
                       </div>
                     </Card>
                   </div>
