@@ -176,15 +176,17 @@ export default function LandingPage() {
                   <div className="p-1">
                     <Card className="overflow-hidden">
                       <div className="grid md:grid-cols-2">
-                        <div className="bg-muted aspect-video"></div>
-                        <div className="p-6">
-                            <CardHeader>
-                                <CardTitle>Youth Summer Camp</CardTitle>
-                                <CardDescription>August 5-9, 2024</CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                <p>An intensive week of training for aspiring young players focusing on skills and teamwork.</p>
-                            </CardContent>
+                        <div className="bg-muted min-h-[250px] md:h-full"></div>
+                        <div className="p-6 flex flex-col justify-between">
+                            <div>
+                                <CardHeader>
+                                    <CardTitle>Youth Summer Camp</CardTitle>
+                                    <CardDescription>August 5-9, 2024</CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <p>An intensive week of training for aspiring young players focusing on skills and teamwork.</p>
+                                </CardContent>
+                            </div>
                             <CardFooter>
                                 <Button>Register Now</Button>
                             </CardFooter>
@@ -197,15 +199,17 @@ export default function LandingPage() {
                   <div className="p-1">
                     <Card className="overflow-hidden">
                       <div className="grid md:grid-cols-2">
-                        <div className="bg-muted aspect-video"></div>
-                         <div className="p-6">
-                            <CardHeader>
-                                <CardTitle>Annual Club Tournament</CardTitle>
-                                <CardDescription>September 1-3, 2024</CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                <p>Compete against the best teams in the region and prove your skills on the big stage.</p>
-                            </CardContent>
+                        <div className="bg-muted min-h-[250px] md:h-full"></div>
+                         <div className="p-6 flex flex-col justify-between">
+                            <div>
+                                <CardHeader>
+                                    <CardTitle>Annual Club Tournament</CardTitle>
+                                    <CardDescription>September 1-3, 2024</CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <p>Compete against the best teams in the region and prove your skills on the big stage.</p>
+                                </CardContent>
+                            </div>
                             <CardFooter>
                                 <Button>Learn More</Button>
                             </CardFooter>
@@ -218,15 +222,17 @@ export default function LandingPage() {
                   <div className="p-1">
                     <Card className="overflow-hidden">
                       <div className="grid md:grid-cols-2">
-                        <div className="bg-muted aspect-video"></div>
-                       <div className="p-6">
-                          <CardHeader>
-                              <CardTitle>Scouting Day</CardTitle>
-                              <CardDescription>October 12, 2024</CardDescription>
-                          </CardHeader>
-                          <CardContent>
-                              <p>An open trial day for talented players to get scouted by professional clubs and coaches.</p>
-                          </CardContent>
+                        <div className="bg-muted min-h-[250px] md:h-full"></div>
+                       <div className="p-6 flex flex-col justify-between">
+                          <div>
+                              <CardHeader>
+                                  <CardTitle>Scouting Day</CardTitle>
+                                  <CardDescription>October 12, 2024</CardDescription>
+                              </CardHeader>
+                              <CardContent>
+                                  <p>An open trial day for talented players to get scouted by professional clubs and coaches.</p>
+                              </CardContent>
+                          </div>
                           <CardFooter>
                               <Button>Get Notified</Button>
                           </CardFooter>
